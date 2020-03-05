@@ -1,4 +1,4 @@
-package arraylists;
+package com.testlander.arraylists;
 
 import java.util.ArrayList;
 
