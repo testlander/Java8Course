@@ -28,7 +28,7 @@ public class Main {
         ArrayList<String> strArrayList = new ArrayList<>();
         strArrayList.add("Mete");
 
-        //ArrayList<int> intArrayList = new ArrayList<int>();
+        //ArrayList<int> intArrayList = new ArrayList<int>(); ==> Type argument cannot be of primitive type
         ArrayList<IntClass> intClassArrayList = new ArrayList<>();
         intClassArrayList.add(new IntClass(56));
         Integer integer = new Integer(56);
@@ -36,14 +36,17 @@ public class Main {
 
         ArrayList<Integer> intArrayList = new ArrayList<>();
         for (int i = 0; i <= 10; i++) {
-            intArrayList.add(Integer.valueOf(i)); //==>Autoboxing
+            intArrayList.add(Integer.valueOf(i)); //==>Autoboxing: We're creating or converting an integer,
+                                                  //a base primitive type int to an Integer.x§
         }
 
         for (int i = 0; i <= 10; i++) {
-            System.out.println(i + " --> " + intArrayList.get(i).intValue()); //Unboxing
+            System.out.println(i + " --> " + intArrayList.get(i).intValue()); //Unboxing: is where we're taking it from
+                                                                              //the class or from the object wrapper and
+                                                                              //converting it back to a primitive type.
         }
 
-        Integer myIntValue = 56; //Compile time 56 --> Integer.valueOf(56)
+        Integer myIntValue = 56; //Compile time: 56 --> Integer.valueOf(56)
         int myInt = myIntValue; //myIntValue.intValue(); //Unboxing
 
         ArrayList<Double> myDoubleValues = new ArrayList<>();
